@@ -6,10 +6,14 @@ public static class Part2
     {
         var input = File.ReadAllLines("input.txt");
 
-        var lists = input.Select(x => new { list1 = int.Parse(x.Split(' ')[0].Trim()), list2 = int.Parse(x.Split(' ').Last().Trim()) });
+        var lists = input.Select(x => new 
+        { 
+            list1 = int.Parse(x.Split(' ')[0].Trim()), 
+            list2 = int.Parse(x.Split(' ').Last().Trim()) 
+        });
 
-        var list1 = lists.Select(x => x.list1).Order();
-        var list2 = lists.Select(x => x.list2).Order();
+        var list1 = lists.Select(x => x.list1);
+        var list2 = lists.Select(x => x.list2);
 
         List<int> distances = [];
         foreach (var list1Number in list1)
